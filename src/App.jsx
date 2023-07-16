@@ -1,12 +1,19 @@
 import './App.css'
-import CreatePost from './app/components/CreatePost'
-
+import PostsList from '../src/components/PostsList/PostsList'
+import AddPostForm from './components/AddPostForm/AddPostForm'
 function App() {
 
   return (
     <>
-      <CreatePost />
+      <div className='container'>
+
+        <AddPostForm />
+
+        <PostsList />
+      </div>
+
     </>
+
   )
 }
 
