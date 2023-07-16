@@ -1,9 +1,12 @@
 import './App.css'
+import CreatePost from './app/components/CreatePost'
 
 function App() {
 
   return (
-    <h1>hello</h1>
+    <>
+      <CreatePost />
+    </>
   )
 }
 
