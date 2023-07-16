@@ -1,17 +1,20 @@
 import React from 'react'
 import '../PostsList/PostList.css'
+import { useSelector } from 'react-redux'
 const PostsList = () => {
+    const postList = useSelector((state) => state.post)
+
     return (
         <section>
             <div className='posts-list'>
-                <article className='post'>
-                    <h3>Title</h3>
-                    <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure quas id voluptate illo nam numquam ratione reprehenderit. Illum, explicabo esse.</h5>
-                </article>
-                <article className='post'>
-                    <h3>Title</h3>
-                    <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure quas id voluptate illo nam numquam ratione reprehenderit. Illum, explicabo esse.</h5>
-                </article>
+                {postList.map((post) => {
+                    return <article key={post.id} className='post'>
+                        <h3>{post.title}</h3>
+                        <h5>{post.content}</h5>
+                    </article>
+                })}
+
+
             </div>
 
         </section>
